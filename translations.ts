@@ -1,3 +1,4 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -70,10 +71,16 @@ export const translations = {
       rotationTitle: "Rotação Automática",
       rotationDesc: "Você pode inserir múltiplas chaves (uma por linha). Se uma chave atingir o limite de cota, o sistema tentará a próxima automaticamente.",
       label: "Chaves API do Gemini",
-      placeholder: "Ex: AIzaSy...\nAIzaSy...\n(Deixe em branco para usar a conta conectada padrão)",
+      placeholder: "Cole suas chaves aqui (uma por linha)...\nAIzaSy...\nAIzaSy...",
       save: "Salvar Chaves",
-      note: "Suas chaves são salvas localmente no navegador e nunca enviadas a servidores externos (exceto Google API).",
-      connect: "Conectar Chave API"
+      note: "Suas chaves são salvas localmente no navegador.",
+      connect: "Conectar Chave API",
+      dontHaveKey: "Não tem uma chave?",
+      createKeyBtn: "Criar Chave Grátis",
+      instructions: "O Gemini 2.5 Flash possui um nível gratuito generoso. Para obter sua chave:",
+      step1: "Acesse o Google AI Studio.",
+      step2: "Clique em 'Create API Key'.",
+      step3: "Copie a chave e cole no campo acima."
     },
     errors: {
       topicRequired: "Por favor, digite um tópico para visualizar.",
@@ -166,10 +173,16 @@ export const translations = {
       rotationTitle: "Automatic Rotation",
       rotationDesc: "You can enter multiple keys (one per line). If a key reaches its quota limit, the system will automatically try the next one.",
       label: "Gemini API Keys",
-      placeholder: "Ex: AIzaSy...\nAIzaSy...\n(Leave blank to use the default connected account)",
+      placeholder: "Paste your keys here (one per line)...\nAIzaSy...\nAIzaSy...",
       save: "Save Keys",
-      note: "Your keys are saved locally in the browser and never sent to external servers (except Google API).",
-      connect: "Connect API Key"
+      note: "Your keys are saved locally in the browser.",
+      connect: "Connect API Key",
+      dontHaveKey: "Don't have a key?",
+      createKeyBtn: "Get Free API Key",
+      instructions: "Gemini 2.5 Flash has a generous free tier. To get your key:",
+      step1: "Go to Google AI Studio.",
+      step2: "Click 'Create API Key'.",
+      step3: "Copy the key and paste it above."
     },
     errors: {
       topicRequired: "Please enter a topic to visualize.",
@@ -262,10 +275,16 @@ export const translations = {
       rotationTitle: "Rotación Automática",
       rotationDesc: "Puedes ingresar múltiples claves (una por línea). Si una clave alcanza el límite de cuota, el sistema probará automáticamente la siguiente.",
       label: "Claves API de Gemini",
-      placeholder: "Ej: AIzaSy...\nAIzaSy...\n(Dejar en blanco para usar la cuenta conectada predeterminada)",
+      placeholder: "Pega tus claves aquí (una por línea)...\nAIzaSy...\nAIzaSy...",
       save: "Guardar Claves",
-      note: "Tus claves se guardan localmente en el navegador y nunca se envían a servidores externos (excepto Google API).",
-      connect: "Conectar Clave API"
+      note: "Tus claves se guardan localmente en el navegador.",
+      connect: "Conectar Clave API",
+      dontHaveKey: "¿No tienes una clave?",
+      createKeyBtn: "Obtener Clave Gratis",
+      instructions: "Gemini 2.5 Flash tiene un nivel gratuito generoso. Para obtener tu clave:",
+      step1: "Ve a Google AI Studio.",
+      step2: "Haz clic en 'Create API Key'.",
+      step3: "Copia la clave y pégala arriba."
     },
     errors: {
       topicRequired: "Por favor, ingresa un tema para visualizar.",

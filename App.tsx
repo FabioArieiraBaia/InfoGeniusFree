@@ -1,3 +1,4 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -182,7 +183,7 @@ const App: React.FC = () => {
   // Custom Key Management Modal
   const KeySelectionModal = ({ onClose }: { onClose: () => void }) => (
     <div className="fixed inset-0 z-[200] bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-300">
-        <div className="bg-white dark:bg-slate-900 border-2 border-cyan-500/50 rounded-2xl shadow-2xl max-w-lg w-full p-6 md:p-8 relative overflow-hidden">
+        <div className="bg-white dark:bg-slate-900 border-2 border-cyan-500/50 rounded-2xl shadow-2xl max-w-lg w-full p-6 md:p-8 relative overflow-hidden flex flex-col max-h-[90vh]">
             <button 
                 onClick={onClose}
                 className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors"
@@ -191,13 +192,13 @@ const App: React.FC = () => {
             </button>
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500"></div>
             
-            <div className="flex flex-col space-y-6">
+            <div className="flex flex-col space-y-5 overflow-y-auto pr-2 custom-scrollbar">
                 <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/30 rounded-xl flex items-center justify-center text-cyan-600 dark:text-cyan-400 border border-cyan-200 dark:border-cyan-800">
+                    <div className="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/30 rounded-xl flex items-center justify-center text-cyan-600 dark:text-cyan-400 border border-cyan-200 dark:border-cyan-800 shrink-0">
                         <Key className="w-6 h-6" />
                     </div>
                     <div>
-                        <h2 className="text-xl font-display font-bold text-slate-900 dark:text-white">
+                        <h2 className="text-xl font-display font-bold text-slate-900 dark:text-white leading-tight">
                             {t.apiModal.title}
                         </h2>
                         <p className="text-slate-500 dark:text-slate-400 text-xs">
@@ -222,7 +223,7 @@ const App: React.FC = () => {
                         value={apiKeysInput}
                         onChange={(e) => setApiKeysInput(e.target.value)}
                         placeholder={t.apiModal.placeholder}
-                        className="w-full h-40 p-4 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl font-mono text-xs md:text-sm focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none resize-none text-slate-800 dark:text-slate-200 placeholder:text-slate-400"
+                        className="w-full h-32 p-4 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl font-mono text-xs md:text-sm focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none resize-none text-slate-800 dark:text-slate-200 placeholder:text-slate-400"
                     />
                 </div>
 
@@ -234,6 +235,31 @@ const App: React.FC = () => {
                         <Save className="w-4 h-4" />
                         <span>{t.apiModal.save}</span>
                     </button>
+                </div>
+
+                {/* Free Key Instructions */}
+                <div className="border-t border-slate-200 dark:border-white/10 pt-5 mt-2">
+                    <h3 className="text-sm font-bold text-slate-800 dark:text-white mb-2 flex items-center gap-2">
+                        {t.apiModal.dontHaveKey}
+                        <span className="text-[10px] bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-0.5 rounded-full font-bold">FREE</span>
+                    </h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+                        {t.apiModal.instructions}
+                    </p>
+                    <ol className="text-xs text-slate-600 dark:text-slate-400 space-y-1 mb-4 list-decimal pl-4 marker:font-bold marker:text-cyan-600">
+                        <li>{t.apiModal.step1}</li>
+                        <li>{t.apiModal.step2}</li>
+                        <li>{t.apiModal.step3}</li>
+                    </ol>
+                    <a 
+                        href="https://aistudio.google.com/app/apikey" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold transition-colors group"
+                    >
+                        <span>{t.apiModal.createKeyBtn}</span>
+                        <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                    </a>
                 </div>
                 
                 <p className="text-[10px] text-center text-slate-400 dark:text-slate-500">
