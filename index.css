@@ -1,0 +1,100 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-serif-display {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+.bg-checkered {
+    background-image: linear-gradient(45deg, #1e293b 25%, transparent 25%), linear-gradient(-45deg, #1e293b 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #1e293b 75%), linear-gradient(-45deg, transparent 75%, #1e293b 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Custom scrollbar for text areas if needed */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; 
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; 
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569; 
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Hide common UI elements */
+  header, 
+  form, 
+  .history-grid, 
+  .search-results,
+  .search-container,
+  button,
+  .edit-controls,
+  .quick-actions,
+  .infographic-display,
+  .intro-screen,
+  .loading-screen,
+  nav {
+    display: none !important;
+  }
+
+  /* Ensure the Article Section is visible and full width */
+  .article-content {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+    color: black !important;
+  }
+  
+  /* Reset general containers */
+  main {
+      padding: 0 !important;
+  }
+  
+  .max-w-6xl, .max-w-7xl {
+      max-width: none !important;
+      margin: 0 !important;
+  }
+
+  /* Ensure text colors are black for print readability */
+  .article-content * {
+    color: black !important;
+    text-shadow: none !important;
+  }
+  
+  /* Ensure images print well */
+  img {
+      max-width: 100% !important;
+      page-break-inside: avoid;
+  }
+  
+  h1, h2, h3, p {
+      page-break-inside: avoid;
+  }
+}
